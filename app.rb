@@ -26,19 +26,16 @@ get '/visit' do
 end
  
 post '/visit' do 
-	@user_name = params[:user_name]
-	@phone     = params[:phone]
-	@date_time = params[:date_time]
-	@barber    = params[:barber]
-	@color     = params[:color]
-
-	c = Client.new 
-
-	c.name = @user_name
-	c.phone = @phone
-	c.datestamp = @date_time
-	c.barber = @barber 
-	c.color = @color
-	c.save
 	
+	c = Client.new params[:client]
+	c.save
+
 end
+
+
+# <div class="form-group">
+#     <label class="form-label">Ваш парикмахер:</label>
+#     <select name="barber"class="form-control" aria-label="Default select example">
+#         <% @barbers.each do |item| %>
+#             <option <%= @barber == item['name']? 'selected': '' %>><%= item['name'] %></option>
+#         <% end %>
