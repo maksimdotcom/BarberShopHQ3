@@ -47,7 +47,7 @@ end
 
 
 get '/bookings' do 
-	@client = Client.all
+	@clients = Client.order('created_at DESC')
 	erb :bookings
 end 
 
