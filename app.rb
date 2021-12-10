@@ -52,7 +52,10 @@ get '/bookings' do
 end 
 
 
-
+get '/client/:id' do 
+	@client = Client.find(params[:id])
+	erb :client
+end
 
 # <div class="form-group">
 #     <label class="form-label">Ваш парикмахер:</label>
