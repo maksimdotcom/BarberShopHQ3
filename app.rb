@@ -40,6 +40,11 @@ post '/visit' do
 	end
 end
 
+get '/barber/:id' do
+	@barber = Barber.find(params[:id])
+	erb :barber
+end
+
 
 # <div class="form-group">
 #     <label class="form-label">Ваш парикмахер:</label>
