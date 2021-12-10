@@ -46,6 +46,14 @@ get '/barber/:id' do
 end
 
 
+get '/bookings' do 
+	@client = Client.all
+	erb :bookings
+end 
+
+
+
+
 # <div class="form-group">
 #     <label class="form-label">Ваш парикмахер:</label>
 #     <select name="barber"class="form-control" aria-label="Default select example">
